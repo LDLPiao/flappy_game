@@ -1,0 +1,36 @@
+[gd_scene load_steps=5 format=3 uid="uid://de73m5qfuewys"]
+
+[ext_resource type="Script" uid="uid://diad62cexyamf" path="res://Features/Obstáculos/obstáculo.gd" id="1_7w5im"]
+[ext_resource type="Texture2D" uid="uid://clth61sgu5yym" path="res://Assets/Tiles/Style 1/PipeStyle1.png" id="1_itfdi"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mvgyh"]
+size = Vector2(32, 350)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7w5im"]
+size = Vector2(20, 70)
+
+[node name="Obstáculo" type="Area2D"]
+script = ExtResource("1_7w5im")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -215)
+shape = SubResource("RectangleShape2D_mvgyh")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+position = Vector2(0, 215)
+shape = SubResource("RectangleShape2D_mvgyh")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(0, -215)
+texture = ExtResource("1_itfdi")
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(0, 215)
+texture = ExtResource("1_itfdi")
+
+[node name="Passagem" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Passagem"]
+shape = SubResource("RectangleShape2D_7w5im")

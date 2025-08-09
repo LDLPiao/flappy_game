@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://fk1xnqnkavvf"]
+
+[ext_resource type="Texture2D" uid="uid://dp5oaqovaeo46" path="res://Assets/Player/StyleBird1/Bird1-1.png" id="1_3qydi"]
+[ext_resource type="Script" uid="uid://b7jpfjm0iyxqd" path="res://Features/Player/player.gd" id="1_imb0g"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ig7tw"]
+radius = 7.0
+
+[node name="CharacterBody2D" type="CharacterBody2D"]
+script = ExtResource("1_imb0g")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+texture = ExtResource("1_3qydi")
+hframes = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+show_behind_parent = true
+position = Vector2(0, 1)
+shape = SubResource("CircleShape2D_ig7tw")

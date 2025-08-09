@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://b1x3mcx8tbxoc"]
+
+[ext_resource type="Script" uid="uid://wr8uy0kogjbe" path="res://Features/Obstáculos/obstaculo_manager.gd" id="1_2skcm"]
+
+[node name="obstaculo_manager" type="Node"]
+script = ExtResource("1_2skcm")
+
+[node name="Timer" type="Timer" parent="."]
+autostart = true
