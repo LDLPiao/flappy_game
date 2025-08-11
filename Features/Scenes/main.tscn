@@ -1,9 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://ce6tktjyo1p0l"]
+[gd_scene load_steps=8 format=3 uid="uid://ce6tktjyo1p0l"]
 
 [ext_resource type="PackedScene" uid="uid://fk1xnqnkavvf" path="res://Features/Player/Player.tscn" id="1_5q6ta"]
+[ext_resource type="Script" uid="uid://ff4wyp5qckcp" path="res://Features/Scenes/chão.gd" id="2_13qxj"]
 [ext_resource type="Texture2D" uid="uid://n7k8nusbnh6h" path="res://Assets/Tiles/Style 1/TileStyle1.png" id="2_pmynj"]
 [ext_resource type="Texture2D" uid="uid://2w7op7iytgcv" path="res://Assets/Background/Background2.png" id="3_vjdq8"]
 [ext_resource type="PackedScene" uid="uid://b1x3mcx8tbxoc" path="res://Features/Obstáculos/obstaculos_manager.tscn" id="4_2lveb"]
+[ext_resource type="PackedScene" uid="uid://cffitdqta3g6u" path="res://Features/GUI/gui.tscn" id="5_mvgyh"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2lveb"]
 
@@ -16,8 +18,10 @@ position = Vector2(98, 168)
 [node name="Cenário" type="Node" parent="."]
 
 [node name="Chão" type="Node" parent="Cenário"]
+script = ExtResource("2_13qxj")
 
 [node name="Parallax2D" type="Parallax2D" parent="Cenário/Chão"]
+process_mode = 3
 z_index = 2
 repeat_size = Vector2(72, 0)
 autoscroll = Vector2(-100, 0)
@@ -25,6 +29,7 @@ repeat_times = 3
 ignore_camera_scroll = true
 
 [node name="Sprite2D" type="Sprite2D" parent="Cenário/Chão/Parallax2D"]
+process_mode = 3
 texture_filter = 1
 position = Vector2(36, 394)
 scale = Vector2(3.08824, 3.08824)
@@ -43,16 +48,20 @@ shape = SubResource("RectangleShape2D_2lveb")
 [node name="Fundo" type="Node" parent="Cenário"]
 
 [node name="Parallax2D" type="Parallax2D" parent="Cenário/Fundo"]
+process_mode = 3
 z_index = -1
 repeat_size = Vector2(357.925, 0)
 autoscroll = Vector2(-50, 0)
 
 [node name="Background2" type="Sprite2D" parent="Cenário/Fundo/Parallax2D"]
+process_mode = 3
 texture_filter = 1
 scale = Vector2(1.39844, 1.39844)
 texture = ExtResource("3_vjdq8")
 centered = false
 
 [node name="obstaculo_manager" parent="." instance=ExtResource("4_2lveb")]
+
+[node name="GUI" parent="." instance=ExtResource("5_mvgyh")]
 
 [connection signal="body_entered" from="Cenário/Chão/Area2D" to="Player" method="_on_area_2d_body_entered"]

@@ -7,6 +7,7 @@ extends Node
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	timer.timeout.connect(_on_timer_timeout)
+	EventBus.game_started.connect(on_game_started)
 
 
 # Usada para instanciar os obstáculos no sinal de timeout
@@ -19,3 +20,8 @@ func _on_timer_timeout() -> void:
 	_obstaculo.position = _position
 	
 	add_child(_obstaculo, true)
+
+	timer.wait_time *= GameManager.timer_multiplicador
+
+func on_game_started() -> void:
+	timer.start()

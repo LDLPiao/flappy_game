@@ -1,11 +1,9 @@
 extends Node
 
+@warning_ignore_start("unused_signal")
 
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	pass # Replace with function body.
+signal player_hit_obstacle
+signal player_passed_obstacle
+signal game_started
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
+@warning_ignore_restore("unused_signal")

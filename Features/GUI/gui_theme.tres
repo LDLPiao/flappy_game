@@ -1,0 +1,11 @@
+[gd_resource type="Theme" load_steps=3 format=3 uid="uid://bdahmbk50rrp4"]
+
+[ext_resource type="FontFile" uid="uid://dxo2gobq6wtt6" path="res://Assets/Fonts/square-deal/square-deal.ttf" id="1_6732j"]
+
+[sub_resource type="FontVariation" id="FontVariation_6732j"]
+base_font = ExtResource("1_6732j")
+
+[resource]
+default_font = SubResource("FontVariation_6732j")
+Label/constants/outline_size = 8
+Label/font_sizes/font_size = 32
