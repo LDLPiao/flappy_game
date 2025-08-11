@@ -18,6 +18,7 @@ position = Vector2(98, 168)
 [node name="Chão" type="Node" parent="Cenário"]
 
 [node name="Parallax2D" type="Parallax2D" parent="Cenário/Chão"]
+z_index = 2
 repeat_size = Vector2(72, 0)
 autoscroll = Vector2(-100, 0)
 repeat_times = 3
